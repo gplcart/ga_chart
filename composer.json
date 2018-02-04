@@ -1,0 +1,18 @@
+{
+  "name": "gplcart/ga_chart",
+  "type": "gplcart-module",
+  "description": "Turns plain Google Analytics reports into nice charts",
+  "keywords": [
+    "gplcart",
+    "ecommerce",
+    "shopping cart",
+    "gplcart module",
+    "php"
+  ],
+  "license": "GPL-3.0-or-later",
+  "require": {
+    "gplcart/composer-module-installer": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

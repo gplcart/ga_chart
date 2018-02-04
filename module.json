@@ -1,0 +1,11 @@
+{
+  "name": "Google Analytics Charts",
+  "core": "1.x",
+  "author": "Iurii Makukh <gplcart.software@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "version": "1.0.0-dev",
+  "description": "Turns plain Google Analytics reports into nice charts",
+  "dependencies": {
+    "ga_report": "1.x"
+  }
+}
