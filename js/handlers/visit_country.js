@@ -11,6 +11,8 @@
      */
     Gplcart.modules.ga_chart.draw.visit_country = function (google) {
 
+        google.charts.load('current', {'packages': ['geochart']});
+
         /**
          * Draw chart when API is loaded
          */
@@ -37,7 +39,7 @@
         var key = 'ga_chart_' + handler;
         var container = $('div#ga-report-panel-' + handler + ' .panel-body');
 
-        if (Gplcart.settings[key] && Gplcart.settings[key].rows) {
+        if (Gplcart.settings[key] && Gplcart.settings[key].rows && container.length) {
 
             var data = [
                 [Gplcart.text('Country'), Gplcart.text('Pageviews')]
@@ -53,11 +55,11 @@
             }
 
             var options = {
-                height: 200,
+                height: 300,
                 chartArea: {width: container.innerWidth() - 50}
             };
 
-            var chart = new google.visualization.PieChart(container[0]);
+            var chart = new google.visualization.GeoChart(container[0]);
             chart.draw(google.visualization.arrayToDataTable(data), options);
         }
     };

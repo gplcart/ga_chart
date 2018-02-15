@@ -37,7 +37,7 @@
         var key = 'ga_chart_' + handler;
         var container = $('div#ga-report-panel-' + handler + ' .panel-body');
 
-        if (Gplcart.settings[key] && Gplcart.settings[key].rows) {
+        if (Gplcart.settings[key] && Gplcart.settings[key].rows && container.length) {
 
             var data = [
                 [Gplcart.text('Language'), Gplcart.text('Pageviews')]

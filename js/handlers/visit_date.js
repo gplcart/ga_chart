@@ -35,20 +35,16 @@
 
         var handler = 'visit_date';
         var key = 'ga_chart_' + handler;
+        var container = $('div#ga-report-panel-' + handler + ' .panel-body');
 
-        if (Gplcart.settings[key] && Gplcart.settings[key].rows) {
+        if (Gplcart.settings[key] && Gplcart.settings[key].rows && container.length) {
 
-            var container = $('div#ga-report-panel-' + handler + ' .panel-body');
-
-            var data = [
-                [Gplcart.text('Date'), Gplcart.text('Pageviews')]
-            ];
+            var data = [[Gplcart.text('Date'), Gplcart.text('Pageviews')]];
 
             for (var i in Gplcart.settings[key].rows) {
                 if (Gplcart.settings[key].rows.hasOwnProperty(i)) {
 
                     var date = Gplcart.settings[key].rows[i]['ga:date'];
-
                     var year = date.slice(0, 4);
                     var month = date.slice(4, 6);
                     var day = date.slice(6, 8);
@@ -58,10 +54,8 @@
             }
 
             var options = {
-                vAxis: {minValue: 100},
-                legend: {position: 'none'},
                 hAxis: {slantedText: true},
-                chartArea: {width: container.innerWidth() - 50}
+                chartArea: {width: container.innerWidth() - 70}
             };
 
             var chart = new google.visualization.LineChart(container[0]);

@@ -1,11 +1,10 @@
-/* global Gplcart, jQuery, google */
-(function (Gplcart, $) {
+/* global Gplcart, jQuery, google, document */
+(function (document, Gplcart, $) {
 
     "use strict";
 
     /**
      * Load Google Chart library when DOM is ready
-     * @returns {undefined}
      */
     Gplcart.onload.loadGoogleChartLibrary = function () {
         if (typeof google === 'undefined' || typeof google.charts === 'undefined') {
@@ -26,4 +25,4 @@
         }
     };
 
-})(Gplcart, jQuery);
+})(document, Gplcart, jQuery);
