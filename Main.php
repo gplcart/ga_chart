@@ -32,8 +32,8 @@ class Main
             $handler_id = $data['content']['data']['handler']['id'];
             $controller->setJsSettings("ga_chart_$handler_id", $data['content']['data']['report']['data']);
 
-            $controller->setJs(__DIR__ . "/js/handlers/$handler_id.js", array('aggregate' => false));
-            $controller->setJs(__DIR__ . "/js/common.js", array('aggregate' => false));
+            $controller->setJs(__DIR__ . "/js/handlers/$handler_id.js");
+            $controller->setJs(__DIR__ . "/js/common.js");
         }
     }
 }
